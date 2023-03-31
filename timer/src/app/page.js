@@ -12,8 +12,11 @@ export default function Home() {
         <div className={styles.center}>
           BLOCKGOR
         </div>
-        <div className={styles.center}>
-          <Countdown/>
+        <div className={styles.text}>
+          We are building platform multiplayer
+        </div>
+        <div className={styles.countdown}>
+          <Countdown />
         </div>
       </div>
 

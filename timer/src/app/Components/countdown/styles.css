@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Act_Of_Rejection';
+  src: url('../../Fonts/Act_Of_Rejection.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .countdown .content {
   width: 100%;
   display: flex;
@@ -27,7 +34,7 @@
   font-size: 30px;
   font-weight: 600;
   color: white;
-  background-color: #144b40;
+  background-color: #000000;
   display: flex;
   justify-content: center;
   align-items: center;
