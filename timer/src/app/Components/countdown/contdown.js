@@ -2,14 +2,18 @@
 import React, { useState, useEffect } from "react";
 import './styles.css';
 
-const COUNTDOWN_TARGET = new Date("2023-04-25T23:59:59")
+const COUNTDOWN_TARGET = new Date("2023-04-25T12:00:00")
 
 const getTimeLeft = () => {
-    const totalTimeLeft = COUNTDOWN_TARGET - new Date();
-    const days = Math.floor(totalTimeLeft / (1000 * 60 * 60 * 24));
-    const hours = Math.floor(totalTimeLeft / (1000 * 60 * 60) % 24);
-    const minutes = Math.floor(totalTimeLeft / (1000 * 60) % 60);
-    const seconds = Math.floor(totalTimeLeft / 1000 % 60);
+
+    const now = new Date();
+    const nowUTC = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
+    const difference = COUNTDOWN_TARGET - nowUTC;
+
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(difference / (1000 * 60 * 60) % 24);
+    const minutes = Math.floor(difference / (1000 * 60) % 60);
+    const seconds = Math.floor(difference / 1000 % 60);
     return {
         'Days': days,
         'Hours': hours,
